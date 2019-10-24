@@ -1,0 +1,21 @@
+.navigation {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: $theme-font;
+}
+
+.before__mask-home {
+    padding-left: 2em;
+
+    &::before {
+        mask: url('~@/assets/img/noun_Home_2381923.svg');
+        width: 1.5em;
+        height: 1.5em;
+        top: calc(50% - (1.5em/2));
+    }
+    &:hover {
+        &::before {
+            background-color: $theme-secondary;
+        }
+    }
+}

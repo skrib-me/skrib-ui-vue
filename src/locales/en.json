@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "home": "Home",
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "buttons": {
+    "refresh": "Refresh"
+  },
+  "textarea-whatsup" : "What's going on here, {name}?"
+}

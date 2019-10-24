@@ -1,0 +1,50 @@
+$black: #000000;
+$white: #ffffff;
+
+$beige: #e7dbcd;
+$beige-lighter: #F5E8DA;
+$beige-darker: #69635D;
+
+$blue: #22beeb;
+$blue-lighter: #23C9F7;
+$blue-darker: #0F576B;
+
+$green: #74d72c;
+$green-lighter: #79E32D;
+$green-darker: #2E5711;
+
+$grey: #404040;
+$grey-lighter: #808080;
+$grey-darker: #2d2d2d;
+
+$orange: #ea7f20;
+$orange-lighter: #F78623;
+$orange-darker: #6B3A0F;
+
+$purple: #b047e1;
+$purple-lighter: #BA4CED;
+$purple-darker: #4C1F61;
+
+$red: #e14746;
+$red-lighter: #ED4A4A;
+$red-darker: #611E1E;
+
+
+$yellow: #ebd622;
+$yellow-lighter: #F7E223;
+$yellow-darker: #6B620F;
+
+/*****************
+* THEMING
+******************/
+$theme-font: $white;
+
+$theme-primary: $grey-darker;
+$theme-primary-lighter: $grey;
+$theme-primary-darker: $grey-darker;
+$theme-primary-font: $white;
+
+$theme-secondary: $blue;
+$theme-secondary-lighter: $blue-lighter;
+$theme-secondary-darker: $blue-darker;
+$theme-secondary-font: $white;

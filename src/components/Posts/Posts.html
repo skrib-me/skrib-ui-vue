@@ -1,0 +1,21 @@
+<section class="posts">
+  <DropMessage />
+  <div v-if="geolocalized">
+    <b-button @click="getPosts">{{ $t('buttons.refresh') }}</b-button>
+    <div class="posts-list" v-if="posts.length">
+      <div v-for="post in posts" :key="post.id">
+        <b-card @click="postDetail(post.id)"
+          header-tag="header"
+          class="posts-list__item"
+        >
+          <b-card-text>
+            {{ post.body }}
+          </b-card-text>
+          <template v-slot:header>
+            {{ post.author.username }} · {{ post.createdDate | formatDate }} · <img class="posts-list__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ post.distance | formatDistance }}
+          </template>
+        </b-card>
+      </div>
+    </div>
+  </div>
+</section>

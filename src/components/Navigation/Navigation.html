@@ -1,0 +1,22 @@
+<section class="navigation">
+  <b-nav class="container sticky-top"
+    toggle-class="test"
+  >
+    <b-nav-item class="b-nav__item" to="/"><span class="b-nav__item__before before__mask before__mask-home">{{ $t('menu.home') }}</span></b-nav-item>
+    <template v-if="isAuthenticated">
+      <b-nav-item-dropdown
+        class="b-nav__item"
+        :text="me.profile.firstName"
+        left
+        menu-class="b-nav__dropdown"
+      >
+      <b-dropdown-item class="b-nav__item">Profile</b-dropdown-item>
+      <b-dropdown-divider class="b-nav__dropdown__divider"></b-dropdown-divider>
+      <b-dropdown-item class="b-nav__item" @click='logout'> {{ $t('menu.logout') }} </b-dropdown-item>
+      </b-nav-item-dropdown>
+    </template>
+    <template v-else>
+      <b-button @click='login'> {{ $t('menu.login') }} </b-button>
+    </template>
+  </b-nav>
+</section>

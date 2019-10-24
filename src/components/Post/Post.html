@@ -1,0 +1,17 @@
+<section class="post">
+  <span class="before__mask before__mask-go-back" @click="$router.go(-1)" />
+  <template v-if="geolocalized && post.id">
+    <b-card
+      :header="String(post.author.username)"
+      :footer="post.createdDate | formatDate"
+      class="post-item"
+    >
+      <b-card-text>
+        {{ post.body }}
+      </b-card-text>
+      <div class="card-section">
+        <img :src="staticMap(post)" />
+      </div>
+    </b-card>
+  </template>
+</section>

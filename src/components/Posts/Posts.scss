@@ -1,0 +1,24 @@
+.posts {
+
+}
+
+.posts-list {
+    margin-top: 1em;
+}
+
+.posts-list__item {
+    cursor: pointer;
+    border-radius: .7em;
+    background-color: $theme-primary;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    margin-bottom: 1em;
+
+    &:hover {
+        background-color: $theme-primary-lighter;
+    }
+}
+
+.posts-list__walking-distance {
+    max-width: 1em;
+}

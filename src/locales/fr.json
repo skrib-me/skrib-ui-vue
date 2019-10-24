@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "home": "Accueil",
+    "login": "Connexion",
+    "logout": "Se déconnecter"
+  },
+  "buttons": {
+    "refresh": "Rafraîchir"
+  },
+  "textarea-whatsup" : "Quoi de neuf chez toi, {name} ?"
+}

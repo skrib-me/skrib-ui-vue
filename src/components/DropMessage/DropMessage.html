@@ -1,0 +1,13 @@
+<section class="drop-message">
+  <template v-if="isAuthenticated">
+    <b-form class="drop-message__form" @submit.prevent="onSubmit" v-if="show" >
+      <b-form-textarea
+        class="drop-message__form__message"
+        v-model="form.message"
+        :placeholder="$t('textarea-whatsup', {name: me.profile.firstName} )"
+        no-resize
+      ></b-form-textarea>
+      <b-button type="submit" variant="primary" :disabled="form.message === ''">Drop</b-button>
+    </b-form>
+  </template>
+</section>
