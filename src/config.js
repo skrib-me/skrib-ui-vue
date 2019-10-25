@@ -9,6 +9,7 @@ const GOOGLE_STATICS_API_URL = process.env.VUE_APP_GOOGLE_STATICS_API_URL;
 const GOOGLE_STATICS_API_KEY = process.env.VUE_APP_GOOGLE_STATICS_API_KEY;
 
 const MESSAGES_API_URL = process.env.VUE_APP_MESSAGES_API_URL;
+const USERS_API_URL = process.env.VUE_APP_USERS_API_URL;
 
 export default {
   oidc: {
@@ -34,6 +35,9 @@ export default {
     },
     messagesApi: {
         url: `${MESSAGES_API_URL}`
+    },
+    usersApi: {
+        url: `${USERS_API_URL}`
     },
     googleApi: {
       apiKey: `${GOOGLE_STATICS_API_KEY}`,

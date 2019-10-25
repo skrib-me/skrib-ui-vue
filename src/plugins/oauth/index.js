@@ -10,18 +10,31 @@ const OktaPlugin = {
       Vue.prototype.$login = OktaPlugin.login
     },
     userClaims: async function() {
-      if(await this.$auth.isAuthenticated()) {
+      let isAuthenticated = await this.$auth.isAuthenticated()
+      if(isAuthenticated) {
         this.$store.dispatch('updateUserClaims', await this.$auth.getUser())
       } else {
         this.$store.dispatch('updateUserClaims', null)
       }
+      this.$store.dispatch('updateUserAuthenticated', isAuthenticated)
+    },
+    userinfos: async function() {
+      let isAuthenticated = await this.$auth.isAuthenticated()
+      if(isAuthenticated) {
+        this.$store.dispatch('updateMe', await this.$auth.getUser())
+      } else {
+        this.$store.dispatch('updateMe', null)
+      }
+      this.$store.dispatch('updateUserAuthenticated', isAuthenticated)
     },
     me: async function() {
       let isAuthenticated = await this.$auth.isAuthenticated()
       if(isAuthenticated) {
-        let baseURI = config.resourceServer.oktaApi.url + '/users/me'
-        let me = await this.$http.get(baseURI, {
-          withCredentials: true
+        let bearer = `Bearer ${await this.$auth.getAccessToken()}`
+        let me = await this.$http.get(config.resourceServer.usersApi.url + '/me', {
+          headers: {
+            'Authorization': bearer
+          }
         })
         this.$store.dispatch('updateMe', me.data)
       } else {
