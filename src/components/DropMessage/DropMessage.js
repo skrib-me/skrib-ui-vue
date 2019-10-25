@@ -27,7 +27,9 @@ export default {
   methods: {
     onSubmit: function(evt) {
       this.send()
-      this.reset(evt)
+      .then(() => {
+        this.reset(evt)
+      })
     },
 
     reset: function(evt) {
@@ -41,7 +43,7 @@ export default {
 
     send: async function() {
       let message = {
-        rayon: 1000,
+        rayon: this.me.preferences.rayon,
         geolocation: {
           latitude: this.location.latitude,
           longitude: this.location.longitude,
@@ -50,13 +52,13 @@ export default {
       }
       var baseURI = config.resourceServer.messagesApi.url
       let bearer = `Bearer ${await this.$auth.getAccessToken()}`
-      this.$http.post(baseURI, message, {
+      return this.$http.post(baseURI, message, {
         // withCredentials: true,
         headers: {
           'Authorization': bearer
         }
       })
-      .then((result) => {
+      .then ((result) => {
         this.$parent.posts.unshift(result.data)
       })
     }
