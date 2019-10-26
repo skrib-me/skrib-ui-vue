@@ -1,7 +1,5 @@
 <section class="navigation">
-  <b-nav class="container sticky-top"
-    toggle-class="test"
-  >
+  <b-nav class="container sticky-top">
     <b-nav-item class="b-nav__item" to="/"><span class="b-nav__item__before before__mask before__mask-home">{{ $t('menu.home') }}</span></b-nav-item>
     <template v-if="isAuthenticated">
       <b-nav-item-dropdown

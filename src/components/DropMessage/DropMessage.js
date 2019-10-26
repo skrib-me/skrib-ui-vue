@@ -1,7 +1,7 @@
 import config from '@/config'
 
 export default {
-  name: 'post-message-form',
+  name: 'drop-message',
   created() {
     this.$geolocation()
   },

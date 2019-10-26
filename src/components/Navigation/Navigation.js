@@ -1,5 +1,5 @@
 export default {
-  name: 'user-menu',
+  name: 'navigation',
   data () {
     return {
     }
