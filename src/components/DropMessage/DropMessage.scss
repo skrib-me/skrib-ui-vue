@@ -1,9 +1,9 @@
 .drop-message {
+    margin-bottom: 1em;
 }
 
 .drop-message__form {
     border-bottom: 10px solid $theme-primary-lighter;
-    margin-bottom: 1em;
     padding-bottom: 1em;
 }
 
@@ -15,8 +15,5 @@
     &:focus {
         background-color: $theme-primary;
         color: $theme-primary-font;
-
-        &::placeholder {
-        }
     }
 }

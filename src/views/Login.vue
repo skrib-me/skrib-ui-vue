@@ -29,13 +29,11 @@ export default {
   },
   watch: {
     authenticated: function() {
-      window.console.log('watch user', this.authenticated)
       if (this.authenticated) {
         this.goHome()
       }
     },
     timedOut: function() {
-      window.console.log('login timed out')
       this.goHome()
     }
   },

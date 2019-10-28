@@ -6,13 +6,16 @@
     margin-top: 1em;
 }
 
+.posts-list-transition-enter, .posts-list-transition-leave-to {
+    transform: translateY(0)
+}
+
 .posts-list__item {
     cursor: pointer;
     border-radius: .7em;
     background-color: $theme-primary;
-    transition-property: background-color;
-    transition-duration: 500ms;
     margin-bottom: 1em;
+    transition: transform 500ms;
 
     &:hover {
         background-color: $theme-primary-lighter;

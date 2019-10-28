@@ -8,6 +8,7 @@ export default {
   data () {
     return {
       show: true,
+      submitting: false,
       form: {
         message: ''
       },
@@ -26,10 +27,13 @@ export default {
   },
   methods: {
     onSubmit: function(evt) {
-      this.send()
-      .then(() => {
-        this.reset(evt)
-      })
+      if (!this.submitting) {
+        this.submitting = true
+        this.send().then(() => {
+          this.reset(evt)
+        })
+        this.submitting = false
+      }
     },
 
     reset: function(evt) {

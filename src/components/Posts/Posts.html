@@ -1,10 +1,11 @@
 <section class="posts">
   <DropMessage />
-  <div v-if="geolocalized">
+  <template v-if="geolocalized">
     <b-button @click="getPosts">{{ $t('buttons.refresh') }}</b-button>
-    <div class="posts-list" v-if="posts.length">
-      <div v-for="post in posts" :key="post.id">
-        <b-card @click="postDetail(post.id)"
+    <div v-if="posts.length" class="posts-list">
+      <transition-group name="posts-list-transition" tag="div">
+        <b-card v-for="post in posts" :key="post.id"
+          @click="postDetail(post.id)"
           header-tag="header"
           class="posts-list__item"
         >
@@ -15,7 +16,7 @@
             {{ post.author.username }} · {{ post.createdDate | formatDate }} · <img class="posts-list__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ post.distance | formatDistance }}
           </template>
         </b-card>
-      </div>
+      </transition-group>
     </div>
-  </div>
+  </template>
 </section>
