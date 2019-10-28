@@ -16,6 +16,7 @@ export default {
   },
   created () {
     this.$me()
+    this.$watchApis()
   }
 }
 </script>

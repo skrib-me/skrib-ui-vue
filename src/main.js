@@ -7,6 +7,7 @@ import BootstrapVue from 'bootstrap-vue'
 
 import Geolocation from '@/plugins/geolocation'
 import OktaOAuth from '@/plugins/oauth'
+import ApiWatcher from '@/plugins/api-watcher'
 
 import config from '@/config'
 import router from './router'
@@ -26,6 +27,7 @@ Vue.use(Auth, config.oidc)
 
 Vue.use(Geolocation)
 Vue.use(OktaOAuth)
+Vue.use(ApiWatcher)
 
 new Vue({
   router,

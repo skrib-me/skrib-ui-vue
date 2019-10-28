@@ -1,5 +1,7 @@
 import config from '@/config'
 
+var watcherId
+
 const OktaPlugin = {
     install: function (Vue) {
       Vue.prototype.$me = OktaPlugin.me
@@ -43,19 +45,18 @@ const OktaPlugin = {
       this.$store.dispatch('updateUserAuthenticated', isAuthenticated)
     },
     watchMe: async function(interval) {
-      if (this.$store.state.user.watcherId) {
+      if (watcherId) {
         throw new TypeError("Watcher on /me already exists")
       }
       this.$me()
-      let watcherId = window.setInterval(() => {
+      watcherId = window.setInterval(() => {
         this.$me()
       }, interval * 1000)
-      this.$store.dispatch('watchMe', watcherId)
     },
     clearWatchMe: function() {
-      if (this.$store.state.user.watcherId) {
-        window.clearInterval(this.$store.state.user.watcherId)
-        this.$store.dispatch('watchMe', null)
+      if (watcherId) {
+        window.clearInterval(watcherId)
+        watcherId = null
       }
     },
     login: async function (redirectPath) {
