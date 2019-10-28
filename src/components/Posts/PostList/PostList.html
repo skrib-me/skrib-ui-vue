@@ -1,5 +1,4 @@
 <section class="posts">
-  <DropMessage />
   <template v-if="geolocalized">
     <b-button @click="getPosts">{{ $t('buttons.refresh') }}</b-button>
     <div v-if="posts.length" class="posts-list">

@@ -15,10 +15,10 @@ export default {
   },
   computed: {
     me: function() {
-      return this.$store.state.user.me
+      return this.$store.state.oauth.me
     },
     isAuthenticated: function() {
-      return this.$store.state.user.authenticated
+      return this.$store.state.oauth.authenticated
     }
   }
 }

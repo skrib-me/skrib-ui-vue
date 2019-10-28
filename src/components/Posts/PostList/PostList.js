@@ -1,10 +1,9 @@
 import moment from 'moment'
 
-import DropMessage from '@/components/DropMessage'
 import config from '@/config'
 
 export default  {
-  name: 'posts',
+  name: 'post-list',
   props: [],
   created () {
     this.$geolocation()
@@ -41,15 +40,12 @@ export default  {
     },
     geolocalized: function(){
       return this.$store.state.geolocation.ready
-    }
+    },
   },
   watch: {
     geolocation: function () {
       this.getPosts()
     }
-  },
-  components: {
-    DropMessage
   },
   filters: {
     formatDate: function (date) {

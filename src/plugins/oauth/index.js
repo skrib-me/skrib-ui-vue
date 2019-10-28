@@ -14,20 +14,20 @@ const OktaPlugin = {
     userClaims: async function() {
       let isAuthenticated = await this.$auth.isAuthenticated()
       if(isAuthenticated) {
-        this.$store.dispatch('updateUserClaims', await this.$auth.getUser())
+        this.$store.dispatch('oauth/updateUserClaims', await this.$auth.getUser())
       } else {
-        this.$store.dispatch('updateUserClaims', null)
+        this.$store.dispatch('oauth/updateUserClaims', null)
       }
-      this.$store.dispatch('updateUserAuthenticated', isAuthenticated)
+      this.$store.dispatch('oauth/updateUserAuthenticated', isAuthenticated)
     },
     userinfos: async function() {
       let isAuthenticated = await this.$auth.isAuthenticated()
       if(isAuthenticated) {
-        this.$store.dispatch('updateMe', await this.$auth.getUser())
+        this.$store.dispatch('oauth/updateMe', await this.$auth.getUser())
       } else {
-        this.$store.dispatch('updateMe', null)
+        this.$store.dispatch('oauth/updateMe', null)
       }
-      this.$store.dispatch('updateUserAuthenticated', isAuthenticated)
+      this.$store.dispatch('oauth/updateUserAuthenticated', isAuthenticated)
     },
     me: async function() {
       let isAuthenticated = await this.$auth.isAuthenticated()
@@ -38,11 +38,11 @@ const OktaPlugin = {
             'Authorization': bearer
           }
         })
-        this.$store.dispatch('updateMe', me.data)
+        this.$store.dispatch('oauth/updateMe', me.data)
       } else {
-        this.$store.dispatch('updateMe', null)
+        this.$store.dispatch('oauth/updateMe', null)
       }
-      this.$store.dispatch('updateUserAuthenticated', isAuthenticated)
+      this.$store.dispatch('oauth/updateUserAuthenticated', isAuthenticated)
     },
     watchMe: async function(interval) {
       if (watcherId) {

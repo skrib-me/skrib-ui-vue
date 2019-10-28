@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Posts from './views/Posts.vue'
 import Auth from '@okta/okta-vue'
 
 import config from '@/config'
+
+import PostList from './views/PostList'
 
 Vue.use(Router)
 Vue.use(Auth, config.oidc)
@@ -19,8 +20,8 @@ const router = new Router({
     },
     {
       path: '/',
-      name: 'posts',
-      component: Posts
+      name: 'post-list',
+      component: PostList
     },
     {
       path: '/login',
@@ -30,7 +31,7 @@ const router = new Router({
     {
       path: '/p/:id',
       name: 'post',
-      component: () => import('./components/Post')
+      component: () => import('./components/Posts/Post')
     }
   ]
 })

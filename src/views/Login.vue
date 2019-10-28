@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     authenticated: function () {
-      return this.$store.state.user.authenticated
+      return this.$store.state.oauth.authenticated
     }
   },
   methods: {

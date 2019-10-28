@@ -19,10 +19,10 @@ export default {
       return this.$store.state.geolocation.pos
     },
     isAuthenticated: function () {
-      return this.$store.state.user.authenticated
+      return this.$store.state.oauth.authenticated
     },
     me: function() {
-      return this.$store.state.user.me
+      return this.$store.state.oauth.me
     }
   },
   methods: {

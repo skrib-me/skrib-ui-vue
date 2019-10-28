@@ -7,10 +7,10 @@ const GeolocationPlugin = {
       navigator.geolocation.getCurrentPosition(pos => {
         let currentPos = this.$store.state.geolocation.pos
         if (!GeolocationPlugin._posEquals(currentPos, pos.coords)) {
-          this.$store.dispatch('updateLocation', pos.coords)
+          this.$store.dispatch('geolocation/updateLocation', pos.coords)
         }
       }, () => {
-        this.$store.dispatch('updateLocation')
+        this.$store.dispatch('geolocation/updateLocation')
       })
     }
   },
