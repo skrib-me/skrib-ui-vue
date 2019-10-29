@@ -9,7 +9,7 @@ import Geolocation from '@/plugins/geolocation'
 import OktaOAuth from '@/plugins/oauth'
 import ApiWatcher from '@/plugins/api-watcher'
 
-import config from '@/config'
+import config from '@/environment'
 import router from './router'
 import store from './store'
 import i18n from './i18n'

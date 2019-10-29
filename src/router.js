@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Auth from '@okta/okta-vue'
 
-import config from '@/config'
+import config from '@/environment'
 
 import PostList from './views/PostList'
 

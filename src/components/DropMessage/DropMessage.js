@@ -1,4 +1,4 @@
-import config from '@/config'
+import config from '@/environment'
 
 export default {
   name: 'drop-message',

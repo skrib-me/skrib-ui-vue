@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-import config from '@/config'
+import config from '@/environment'
 
 export default  {
   name: 'post-list',

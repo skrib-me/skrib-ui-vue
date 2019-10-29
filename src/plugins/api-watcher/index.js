@@ -1,4 +1,4 @@
-import config from '@/config'
+import config from '@/environment'
 
 var _apis = new Map([
   [
