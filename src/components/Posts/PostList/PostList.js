@@ -4,17 +4,29 @@ import config from '@/environment'
 
 export default  {
   name: 'PostList',
-  props: [],
+  props: [
+    'unshift'
+  ],
+  data() {
+    return {
+      posts: []
+    }
+  },
+  watch: {
+    geolocation: function () {
+      this.getPosts()
+    },
+    unshift: function(newMessage) {
+      if (newMessage) {
+        this.posts.unshift(newMessage)
+      }
+    }
+  },
   created () {
     this.$geolocation.position()
   },
   mounted() {
     this.getPosts()
-  },
-  data() {
-    return {
-      posts: []
-    }
   },
   methods: {
     async getPosts () {
@@ -30,13 +42,8 @@ export default  {
       }
     },
 
-    postDetail: function(id) {
-      this.$router.push('/p/' + id)
-    }
-  },
-  watch: {
-    geolocation: function () {
-      this.getPosts()
+    goToPostDetail: function(id) {
+      this.$router.push('/posts/' + id)
     }
   },
   filters: {

@@ -4,7 +4,7 @@
     <div v-if="posts.length" class="post-list">
       <transition-group name="post-list-transition" tag="div">
         <b-card v-for="post in posts" :key="post.id"
-          @click="postDetail(post.id)"
+          @click="goToPostDetail(post.id)"
           header-tag="header"
           class="post-list__item"
         >

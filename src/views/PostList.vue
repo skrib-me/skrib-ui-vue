@@ -1,7 +1,7 @@
 <template>
   <section>
-    <PostForm />
-    <PostList />
+    <PostForm @posted="posted" />
+    <PostList :unshift='postedMessage' />
   </section>
 </template>
 
@@ -13,6 +13,16 @@ export default {
   components: {
     PostList,
     PostForm
+  },
+  data() {
+    return {
+      postedMessage: null
+    }
+  },
+  methods: {
+    posted: function(message) {
+      this.postedMessage = message
+    }
   }
 }
 </script>

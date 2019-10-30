@@ -4,8 +4,9 @@ import Auth from '@okta/okta-vue'
 
 import config from '@/environment'
 
-import PostList from '@/views/PostList'
-import postsRoutes from '@/components/Posts/post-routes'
+import Home from '@/views/Home'
+
+import postsRoutes from '@/components/Posts/posts-routes'
 
 Vue.use(Router)
 Vue.use(Auth, config.oidc)
@@ -26,8 +27,8 @@ const oktaRoutes = [
 const appRoutes = [
   {
     path: '/',
-    name: 'post-list',
-    component: PostList
+    name: 'home',
+    component: Home
   }
 ]
 

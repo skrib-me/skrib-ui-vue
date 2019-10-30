@@ -2,9 +2,8 @@ import config from '@/environment'
 
 export default {
   name: 'post-form',
-  created() {
-    this.$geolocation.position()
-  },
+  props: [
+  ],
   data () {
     return {
       show: true,
@@ -13,6 +12,9 @@ export default {
         message: ''
       },
     }
+  },
+  created() {
+    this.$geolocation.position()
   },
   computed: {
     isAuthenticated: function () {
@@ -60,7 +62,7 @@ export default {
         }
       })
       .then ((result) => {
-        this.$parent.posts.unshift(result.data)
+        this.$emit('posted', result.data)
       })
     }
   },
