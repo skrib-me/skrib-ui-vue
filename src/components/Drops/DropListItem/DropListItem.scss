@@ -13,3 +13,11 @@
 .drop-list__item__walking-distance {
   max-width: 1em;
 }
+
+.drop-list__item__user-profile {
+  color: $theme-primary-font;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
