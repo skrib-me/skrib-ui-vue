@@ -6,7 +6,8 @@ import config from '@/environment'
 
 import Home from '@/views/Home'
 
-import dropRoutes from '@/components/Drops/drops-routes'
+import dropsRoutes from '@/components/Drops/drops-routes'
+import usersRoutes from '@/components/Users/users-routes'
 
 Vue.use(Router)
 Vue.use(Auth, config.oidc)
@@ -32,7 +33,7 @@ const appRoutes = [
   }
 ]
 
-const routes = [...appRoutes, ...oktaRoutes, ...dropRoutes]
+const routes = [...appRoutes, ...oktaRoutes, ...dropsRoutes, ...usersRoutes]
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,

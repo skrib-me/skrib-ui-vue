@@ -1,0 +1,9 @@
+<section>
+    <template v-if="geolocalized">
+      <div v-if="drops.length" class="user-drop-list">
+        <template v-for="drop in drops">
+          <DropListItem :drop='drop' :key='drop.id' />
+        </template>
+      </div>
+    </template>
+  </section>

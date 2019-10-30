@@ -1,12 +1,12 @@
 export default [
     {
         path: '/drops',
-        name: 'drop-list',
+        name: 'dropList',
         component: () => import('@/views/DropList')
     },
     {
         path: '/drops/:id',
-        name: 'drop-item',
+        name: 'dropItem',
         component: () => import('@/views/DropItem')
     }
 ]
