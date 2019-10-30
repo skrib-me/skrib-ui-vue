@@ -3,10 +3,10 @@ import moment from 'moment'
 import config from '@/environment'
 
 export default  {
-  name: 'post-list',
+  name: 'PostList',
   props: [],
   created () {
-    this.$geolocation()
+    this.$geolocation.position()
   },
   mounted() {
     this.getPosts()
@@ -33,14 +33,6 @@ export default  {
     postDetail: function(id) {
       this.$router.push('/p/' + id)
     }
-  },
-  computed: {
-    geolocation: function(){
-      return this.$store.state.geolocation.pos
-    },
-    geolocalized: function(){
-      return this.$store.state.geolocation.ready
-    },
   },
   watch: {
     geolocation: function () {

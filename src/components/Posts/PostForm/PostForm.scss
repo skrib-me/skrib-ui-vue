@@ -1,13 +1,13 @@
-.drop-message {
+.post-form {
     margin-bottom: 1em;
 }
 
-.drop-message__form {
+.post-form__form {
     border-bottom: 10px solid $theme-primary-lighter;
     padding-bottom: 1em;
 }
 
-.drop-message__form__message {
+.post-form__form__message {
     background-color: $theme-primary;
     color: $theme-primary-font;
     border: none;

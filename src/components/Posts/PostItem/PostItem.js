@@ -3,10 +3,10 @@ import moment from 'moment'
 import config from '@/environment'
 
 export default  {
-  name: 'post',
+  name: 'PostItem',
   props: [],
   created () {
-    this.$geolocation()
+    this.$geolocation.position()
   },
   mounted () {
     this.getPost()
@@ -45,14 +45,6 @@ export default  {
                   + "&markers=icon:" + coordsMeIconUrl + "%7C" + coordsMe
                   + "&markers=color:0x5cadff%7C" + coordsPost
                   + "&key=" + apiKey
-    }
-  },
-  computed: {
-    geolocation: function(){
-      return this.$store.state.geolocation.pos
-    },
-    geolocalized: function(){
-      return this.$store.state.geolocation.ready
     }
   },
   watch: {

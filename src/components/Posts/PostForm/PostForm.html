@@ -1,8 +1,8 @@
-<section class="drop-message">
+<section class="post-form">
   <template v-if="isAuthenticated">
-    <b-form class="drop-message__form" @submit.prevent="onSubmit" v-if="show" >
+    <b-form class="post-form__form" @submit.prevent="onSubmit" v-if="show" >
       <b-form-textarea
-        class="drop-message__form__message"
+        class="post-form__form__message"
         v-model="form.message"
         :placeholder="$t('textarea-whatsup', {name: me.username} )"
         no-resize

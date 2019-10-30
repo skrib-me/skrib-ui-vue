@@ -1,18 +1,18 @@
-<section class="posts">
+<section>
   <template v-if="geolocalized">
     <b-button @click="getPosts">{{ $t('buttons.refresh') }}</b-button>
-    <div v-if="posts.length" class="posts-list">
-      <transition-group name="posts-list-transition" tag="div">
+    <div v-if="posts.length" class="post-list">
+      <transition-group name="post-list-transition" tag="div">
         <b-card v-for="post in posts" :key="post.id"
           @click="postDetail(post.id)"
           header-tag="header"
-          class="posts-list__item"
+          class="post-list__item"
         >
           <b-card-text>
             {{ post.body }}
           </b-card-text>
           <template v-slot:header>
-            {{ post.author.username }} · {{ post.createdDate | formatDate }} · <img class="posts-list__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ post.distance | formatDistance }}
+            {{ post.author.username }} · {{ post.createdDate | formatDate }} · <img class="post-list__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ post.distance | formatDistance }}
           </template>
         </b-card>
       </transition-group>

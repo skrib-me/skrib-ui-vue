@@ -25,8 +25,8 @@ Vue.prototype.$http = axios
 Vue.use(BootstrapVue)
 Vue.use(Auth, config.oidc)
 
-Vue.use(Geolocation)
-Vue.use(OktaOAuth)
+Vue.use(Geolocation, { store })
+Vue.use(OktaOAuth, { store })
 Vue.use(ApiWatcher)
 
 new Vue({

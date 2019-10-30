@@ -1,9 +1,9 @@
 import config from '@/environment'
 
 export default {
-  name: 'drop-message',
+  name: 'post-form',
   created() {
-    this.$geolocation()
+    this.$geolocation.position()
   },
   data () {
     return {
@@ -15,9 +15,6 @@ export default {
     }
   },
   computed: {
-    location: function() {
-      return this.$store.state.geolocation.pos
-    },
     isAuthenticated: function () {
       return this.$store.state.oauth.authenticated
     },
@@ -49,8 +46,8 @@ export default {
       let message = {
         rayon: this.me.preferences.rayon,
         geolocation: {
-          latitude: this.location.latitude,
-          longitude: this.location.longitude,
+          latitude: this.geolocation.latitude,
+          longitude: this.geolocation.longitude,
         },
         body: this.form.message
       }

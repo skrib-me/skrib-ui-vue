@@ -1,16 +1,12 @@
-.posts {
-
-}
-
-.posts-list {
+.post-list {
     margin-top: 1em;
 }
 
-.posts-list-transition-enter, .posts-list-transition-leave-to {
+.post-list-transition-enter, .post-list-transition-leave-to {
     transform: translateY(0)
 }
 
-.posts-list__item {
+.post-list__item {
     cursor: pointer;
     border-radius: .7em;
     background-color: $theme-primary;
@@ -22,6 +18,6 @@
     }
 }
 
-.posts-list__walking-distance {
+.post-list__walking-distance {
     max-width: 1em;
 }

@@ -1,19 +1,18 @@
 <template>
   <section>
-    <DropMessage />
+    <PostForm />
     <PostList />
   </section>
 </template>
 
 <script>
 import PostList from '@/components/Posts/PostList'
-import DropMessage from '@/components/DropMessage'
+import PostForm from '@/components/Posts/PostForm'
 
 export default {
-  name: 'post-list',
   components: {
     PostList,
-    DropMessage
+    PostForm
   }
 }
 </script>

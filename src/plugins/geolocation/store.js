@@ -14,7 +14,7 @@ const mutations = {
 }
 
 const actions = {
-  updateLocation: ({commit}, location) => {
+  updatePosition: ({commit}, location) => {
     commit('setLocation', location)
   }
 }
