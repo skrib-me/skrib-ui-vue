@@ -1,7 +1,7 @@
 import config from '@/environment'
 
 export default {
-  name: 'post-form',
+  name: 'drop-form',
   props: [
   ],
   data () {
@@ -62,7 +62,7 @@ export default {
         }
       })
       .then ((result) => {
-        this.$emit('posted', result.data)
+        this.$emit('droped', result.data)
       })
     }
   },

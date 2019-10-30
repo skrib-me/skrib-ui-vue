@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import PostComponent from './index.vue';
+import DropItem from './index.vue';
 
 // Here are some Jasmine 2.0 tests, though you can
 // use any test runner / assertion library combo you prefer

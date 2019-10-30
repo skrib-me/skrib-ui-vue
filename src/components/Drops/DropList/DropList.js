@@ -3,22 +3,22 @@ import moment from 'moment'
 import config from '@/environment'
 
 export default  {
-  name: 'PostList',
+  name: 'DropList',
   props: [
     'unshift'
   ],
   data() {
     return {
-      posts: []
+      drops: []
     }
   },
   watch: {
     geolocation: function () {
-      this.getPosts()
+      this.getDrops()
     },
-    unshift: function(newMessage) {
-      if (newMessage) {
-        this.posts.unshift(newMessage)
+    unshift: function(drop) {
+      if (drop) {
+        this.drops.unshift(drop)
       }
     }
   },
@@ -26,10 +26,10 @@ export default  {
     this.$geolocation.position()
   },
   mounted() {
-    this.getPosts()
+    this.getDrops()
   },
   methods: {
-    async getPosts () {
+    async getDrops () {
       if (this.geolocalized) {
         let latitude = this.geolocation.latitude
         let longitude = this.geolocation.longitude
@@ -37,13 +37,13 @@ export default  {
         // let bearer = `Bearer ${await this.$auth.getAccessToken()}`
         await this.$http.get(baseURI)
         .then((result) => {
-          this.posts = result.data
+          this.drops = result.data
         })
       }
     },
 
-    goToPostDetail: function(id) {
-      this.$router.push('/posts/' + id)
+    goToDropItem: function(id) {
+      this.$router.push('/drops/' + id)
     }
   },
   filters: {

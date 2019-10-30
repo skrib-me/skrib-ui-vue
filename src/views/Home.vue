@@ -1,13 +1,13 @@
 <template>
-  <PostList />
+  <DropList />
 </template>
 
 <script>
-import PostList from '@/views/PostList'
+import DropList from '@/views/DropList'
 
 export default {
   components: {
-    PostList,
+    DropList,
   }
 }
 </script>

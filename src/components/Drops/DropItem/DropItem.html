@@ -1,16 +1,16 @@
 <section>
   <span class="before__mask before__mask-go-back" @click="$router.go(-1)" />
-  <template v-if="geolocalized && post.id">
+  <template v-if="geolocalized && drop.id">
     <b-card
-      :header="String(post.author.username)"
-      :footer="post.createdDate | formatDate"
-      class="post-item"
+      :header="String(drop.author.username)"
+      :footer="drop.createdDate | formatDate"
+      class="drop-item"
     >
       <b-card-text>
-        {{ post.body }}
+        {{ drop.body }}
       </b-card-text>
       <div class="card-section">
-        <img :src="staticMap(post)" />
+        <img :src="staticMap(drop)" />
       </div>
     </b-card>
   </template>

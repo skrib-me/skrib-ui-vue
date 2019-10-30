@@ -1,0 +1,21 @@
+<section>
+  <template v-if="geolocalized">
+    <b-button @click="getDrops">{{ $t('buttons.refresh') }}</b-button>
+    <div v-if="drops.length" class="drop-list">
+      <transition-group name="drop-list-transition" tag="div">
+        <b-card v-for="drop in drops" :key="drop.id"
+          @click="goToDropItem(drop.id)"
+          header-tag="header"
+          class="drop-list__item"
+        >
+          <b-card-text>
+            {{ drop.body }}
+          </b-card-text>
+          <template v-slot:header>
+            {{ drop.author.username }} · {{ drop.createdDate | formatDate }} · <img class="drop-list__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ drop.distance | formatDistance }}
+          </template>
+        </b-card>
+      </transition-group>
+    </div>
+  </template>
+</section>

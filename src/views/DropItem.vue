@@ -1,13 +1,13 @@
 <template>
-  <PostItem />
+  <DropItem />
 </template>
 
 <script>
-import PostItem from '@/components/Posts/PostItem'
+import DropItem from '@/components/Drops/DropItem'
 
 export default {
   components: {
-    PostItem
+    DropItem
   }
 }
 </script>
