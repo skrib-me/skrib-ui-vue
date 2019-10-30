@@ -1,0 +1,16 @@
+<section>
+  <template v-if="geolocalized && drop.id">
+    <b-card
+      @click="goToDropItem(drop.id)"
+      header-tag="header"
+      class="drop-list__item"
+    >
+      <b-card-text>
+        {{ drop.body }}
+      </b-card-text>
+      <template v-slot:header>
+        {{ drop.author.username }} · {{ drop.createdDate | formatDate }} · <img class="drop-list__item__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ drop.distance | formatDistance }}
+      </template>
+    </b-card>
+  </template>
+</section>

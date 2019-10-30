@@ -1,0 +1,15 @@
+.drop-list__item {
+  cursor: pointer;
+  border-radius: .7em;
+  background-color: $theme-primary;
+  margin-bottom: 1em;
+  transition: transform 500ms;
+
+  &:hover {
+      background-color: $theme-primary-lighter;
+  }
+}
+
+.drop-list__item__walking-distance {
+  max-width: 1em;
+}

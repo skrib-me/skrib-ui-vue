@@ -5,19 +5,3 @@
 .drop-list-transition-enter, .drop-list-transition-leave-to {
     transform: translateY(0)
 }
-
-.drop-list__item {
-    cursor: pointer;
-    border-radius: .7em;
-    background-color: $theme-primary;
-    margin-bottom: 1em;
-    transition: transform 500ms;
-
-    &:hover {
-        background-color: $theme-primary-lighter;
-    }
-}
-
-.drop-list__walking-distance {
-    max-width: 1em;
-}
