@@ -2,8 +2,8 @@
   <span class="before__mask before__mask-go-back" @click="$router.go(-1)" />
   <template v-if="geolocalized && drop.id">
     <b-card
-      :header="String(drop.author.username)"
       :footer="drop.createdDate | formatDate"
+      header-tag="header"
       class="drop-item"
     >
       <b-card-text>
@@ -12,6 +12,9 @@
       <div class="card-section">
         <img :src="staticMap(drop)" />
       </div>
+      <template v-slot:header>
+        <span @click.stop><router-link class='drop-item__user-profile' :to="'/'+drop.author.username">{{ drop.author.username }}</router-link></span>
+      </template>
     </b-card>
   </template>
 </section>

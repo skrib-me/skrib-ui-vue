@@ -1,6 +1,6 @@
 export default [
     {
-        path: '/users/:id',
+        path: '/:username',
         name: 'userDropList',
         component: () => import('@/components/Users/UserDropList')
     }

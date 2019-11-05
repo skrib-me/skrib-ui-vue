@@ -22,11 +22,15 @@ export default  {
       if (this.geolocalized){
         let latitude = this.geolocation.latitude
         let longitude = this.geolocation.longitude
-        var baseURI = config.resourceServer.messagesApi.url + '/' + this.id + '?latitude= ' + latitude + '&longitude=' + longitude
-        await this.$http.get(baseURI)
-        .then((result) => {
-          this.drop = result.data
-        })
+        var baseURI = config.resourceServer.messagesApi.url + '/' + this.id
+        let options = {
+          headers: {
+            'x-user-geolocation-latitude': latitude,
+            'x-user-geolocation-longitude': longitude
+          }
+        }
+        let result = await this.$http.get(baseURI, options)
+        this.drop = result.data
       }
     },
 

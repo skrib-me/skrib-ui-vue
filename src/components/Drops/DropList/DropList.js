@@ -35,9 +35,14 @@ export default  {
       if (this.geolocalized) {
         let latitude = this.geolocation.latitude
         let longitude = this.geolocation.longitude
-        let baseURI = config.resourceServer.messagesApi.url + '?latitude= ' + latitude + '&longitude=' + longitude
-        // let bearer = `Bearer ${await this.$auth.getAccessToken()}`
-        await this.$http.get(baseURI)
+        let baseURI = config.resourceServer.messagesApi.url
+        let options = {
+          headers: {
+            'x-user-geolocation-latitude': latitude,
+            'x-user-geolocation-longitude': longitude
+          }
+        }
+        this.$http.get(baseURI, options)
         .then((result) => {
           this.drops = result.data
         })

@@ -9,7 +9,14 @@
   transition-property: background-color;
   transition-duration: 500ms;
   margin-bottom: 1em;
+}
 
+.drop-item__user-profile {
+  color: $theme-primary-font;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .before__mask-go-back {

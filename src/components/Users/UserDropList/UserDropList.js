@@ -14,7 +14,7 @@ export default  {
   },
   data() {
     return {
-      id: this.$route.params.id,
+      username: this.$route.params.username,
       drops: []
     }
   },
@@ -28,8 +28,14 @@ export default  {
       if (this.geolocalized){
         let latitude = this.geolocation.latitude
         let longitude = this.geolocation.longitude
-        var baseURI = config.resourceServer.messagesApi.url + '/users/' + this.id + '?latitude= ' + latitude + '&longitude=' + longitude
-        await this.$http.get(baseURI)
+        var baseURI = config.resourceServer.messagesApi.url + '/user/' + this.username
+        let options = {
+          headers: {
+            'x-user-geolocation-latitude': latitude,
+            'x-user-geolocation-longitude': longitude,
+          }
+        }
+        this.$http.get(baseURI, options)
         .then((result) => {
           this.drops = result.data
         })

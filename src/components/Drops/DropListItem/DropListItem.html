@@ -9,7 +9,9 @@
         {{ drop.body }}
       </b-card-text>
       <template v-slot:header>
-        <a class='drop-list__item__user-profile' @click.stop :href="'/users/' + drop.authorId">{{ drop.author.username }}</a> · {{ drop.createdDate | formatDate }} · <img class="drop-list__item__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ drop.distance | formatDistance }}
+        <span @click.stop><router-link class='drop-list__item__user-profile' :to="'/'+drop.author.username">{{ drop.author.username }}</router-link></span>
+         · {{ drop.createdDate | formatDate }}
+         · <img class="drop-list__item__walking-distance" src="@/assets/img/noun_Walking_112220.svg" />{{ drop.distance | formatDistance }}
       </template>
     </b-card>
   </template>
