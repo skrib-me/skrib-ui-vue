@@ -1,6 +1,11 @@
 .navigation {
     padding: 1em 0;
-    color: $theme-font;
+    color: $theme-primary-font;
+    font-weight: bolder;
+
+    .btn {
+        font-weight: inherit;
+    }
 }
 
 .before__mask-home {

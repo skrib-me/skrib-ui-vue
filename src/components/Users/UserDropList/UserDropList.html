@@ -1,4 +1,5 @@
 <section>
+    <span class="before__mask before__mask-go-back" @click="$router.go(-1)" />
     <template v-if="geolocalized">
       <div v-if="drops.length" class="user-drop-list">
         <template v-for="drop in drops">

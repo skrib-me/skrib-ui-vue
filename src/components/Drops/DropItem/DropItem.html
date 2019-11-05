@@ -2,9 +2,9 @@
   <span class="before__mask before__mask-go-back" @click="$router.go(-1)" />
   <template v-if="geolocalized && drop.id">
     <b-card
-      :footer="drop.createdDate | formatDate"
-      header-tag="header"
       class="drop-item"
+      header-tag="header"
+      :footer="drop.createdDate | formatDate"
     >
       <b-card-text>
         {{ drop.body }}

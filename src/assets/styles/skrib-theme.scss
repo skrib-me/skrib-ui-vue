@@ -1,6 +1,6 @@
 body {
     background-color: $theme-primary;
-    color: $theme-font;
+    color: $theme-primary-font;
 }
 
 .btn {
@@ -21,7 +21,7 @@ body {
     &::before {
         mask-repeat: no-repeat;
         mask-position: left;
-        background-color: $theme-font;
+        background-color: $theme-primary-font;
         position: absolute;
         height: 3em;
         width: 3em;
@@ -32,3 +32,19 @@ body {
         content: "";
     }
 }
+
+.before__mask-go-back {
+    cursor: pointer;
+    display: inline-block;
+    height: 3em;
+
+    &:hover {
+      &::before {
+        background-color: $theme-secondary;
+      }
+    }
+
+    &::before {
+      mask: url('~@/assets/img/noun_back_1144382.svg');
+    }
+  }

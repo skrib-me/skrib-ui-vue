@@ -6,16 +6,33 @@
   transition: transform 500ms;
 
   &:hover {
-      background-color: $theme-primary-lighter;
+      background-color: $theme-layer-lighter;
+  }
+
+  header {
+    color: $theme-primary-font-lighter;
   }
 }
 
+.before__mask-walking-distance {
+  display: inline-block;
+  padding-left: 1em;
+
+  &::before {
+    mask: url('~@/assets/img/noun_Walking_112220.svg');
+    background-color: $theme-primary-font-lighter;
+    height: 1em;
+    width: 1em;
+    top: calc(50% - (1em/2));
+  }
+}
 .drop-list__item__walking-distance {
   max-width: 1em;
 }
 
 .drop-list__item__user-profile {
   color: $theme-primary-font;
+  font-weight: bolder;
 
   &:hover {
     text-decoration: underline;

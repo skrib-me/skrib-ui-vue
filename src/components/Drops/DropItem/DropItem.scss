@@ -13,24 +13,9 @@
 
 .drop-item__user-profile {
   color: $theme-primary-font;
+  font-weight: bolder;
 
   &:hover {
     text-decoration: underline;
-  }
-}
-
-.before__mask-go-back {
-  cursor: pointer;
-  display: inline-block;
-  height: 3em;
-
-  &:hover {
-    &::before {
-      background-color: $theme-secondary;
-    }
-  }
-
-  &::before {
-    mask: url('~@/assets/img/noun_back_1144382.svg');
   }
 }

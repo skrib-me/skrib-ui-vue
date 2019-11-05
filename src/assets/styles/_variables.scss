@@ -1,5 +1,9 @@
+$layer-opacity: 0.075;
+
 $black: #000000;
+$black-layer: rgba(0, 0, 0, $layer-opacity);
 $white: #ffffff;
+$white-layer: rgba(255, 255, 255, $layer-opacity);
 
 $beige: #e7dbcd;
 $beige-lighter: #F5E8DA;
@@ -37,12 +41,14 @@ $yellow-darker: #6B620F;
 /*****************
 * THEMING
 ******************/
-$theme-font: $white;
+$theme-layer-lighter: $white-layer;
+$theme-layer-darker: $black-layer;
 
 $theme-primary: $grey-darker;
 $theme-primary-lighter: $grey;
 $theme-primary-darker: $grey-darker;
 $theme-primary-font: $white;
+$theme-primary-font-lighter: $grey-lighter;
 
 $theme-secondary: $blue;
 $theme-secondary-lighter: $blue-lighter;
