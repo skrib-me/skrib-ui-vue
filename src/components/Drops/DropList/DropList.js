@@ -33,13 +33,11 @@ export default  {
   methods: {
     async getDrops () {
       if (this.geolocalized) {
-        let latitude = this.geolocation.latitude
-        let longitude = this.geolocation.longitude
         let baseURI = config.resourceServer.messagesApi.url
         let options = {
           headers: {
-            'x-user-geolocation-latitude': latitude,
-            'x-user-geolocation-longitude': longitude
+            'x-user-geolocation-latitude': this.geolocation.latitude,
+            'x-user-geolocation-longitude': this.geolocation.longitude
           }
         }
         this.$http.get(baseURI, options)

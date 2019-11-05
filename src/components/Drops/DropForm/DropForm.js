@@ -54,13 +54,14 @@ export default {
         body: this.form.message
       }
       var baseURI = config.resourceServer.messagesApi.url
-      let bearer = `Bearer ${await this.$auth.getAccessToken()}`
-      return this.$http.post(baseURI, message, {
-        // withCredentials: true,
+      let options = {
         headers: {
-          'Authorization': bearer
+          'x-user-geolocation-latitude': this.geolocation.latitude,
+          'x-user-geolocation-longitude': this.geolocation.longitude,
+          'Authorization': `Bearer ${await this.$auth.getAccessToken()}`
         }
-      })
+      }
+      this.$http.post(baseURI, message, options)
       .then ((result) => {
         this.$emit('droped', result.data)
       })
