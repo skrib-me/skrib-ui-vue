@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'bootstrap/scss/bootstrap.scss';
+@import '@/assets/styles/skrib-theme.scss';
+
 #app {
   text-align: center;
 }

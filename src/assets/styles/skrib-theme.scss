@@ -5,13 +5,15 @@ body {
 
 .btn {
     background-color: $theme-secondary;
+    color: $theme-secondary-font;
     border: none;
     font-weight: bolder;
     border-radius: 1em;
 
     &:disabled, &:hover  {
         background-color: $theme-secondary-darker;
-    }
+        color: $theme-secondary-font;
+      }
 }
 
 .before__mask {

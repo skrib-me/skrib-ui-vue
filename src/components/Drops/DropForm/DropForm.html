@@ -7,7 +7,7 @@
         :placeholder="$t('textarea-whatsup', {name: me.username} )"
         no-resize
       ></b-form-textarea>
-      <b-button type="submit" variant="primary" :disabled="form.message === ''">Drop</b-button>
+      <button type="submit" class="btn" variant="primary" :disabled="form.message === ''">Drop</button>
     </b-form>
   </template>
 </section>

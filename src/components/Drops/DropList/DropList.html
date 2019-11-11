@@ -1,6 +1,6 @@
 <section>
   <template v-if="geolocalized">
-    <b-button @click="getDrops">{{ $t('buttons.refresh') }}</b-button>
+    <button class="btn" @click="getDrops">{{ $t('buttons.refresh') }}</button>
     <div v-if="drops.length" class="drop-list">
       <transition-group name="drop-list-transition" tag="div">
         <template v-for="drop in drops">
