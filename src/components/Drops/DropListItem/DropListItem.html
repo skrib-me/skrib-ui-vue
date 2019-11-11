@@ -1,18 +1,15 @@
-<section>
-  <template v-if="geolocalized && drop.id">
-    <b-card
-      class="drop-list__item"
-      @click="goToDropItem(drop.id)"
-      header-tag="header"
-    >
-      <b-card-text>
-        {{ drop.body }}
-      </b-card-text>
-      <template v-slot:header>
-        <span @click.stop><router-link class='drop-list__item__user-profile' :to="'/'+drop.author.username">{{ drop.author.username }}</router-link></span>
-         · {{ drop.createdDate | formatDate }}
-         · <span class="before__mask before__mask-walking-distance">{{ drop.distance | formatDistance }}</span>
-      </template>
-    </b-card>
+<b-card
+  v-if="geolocalized && drop.id"
+  class="drop-list__item"
+  @click="goToDropItem(drop.id)"
+  header-tag="header"
+>
+  <b-card-text>
+    {{ drop.body }}
+  </b-card-text>
+  <template v-slot:header>
+    <span @click.stop><router-link class='drop-list__item__user-profile' :to="'/'+drop.author.username">{{ drop.author.username }}</router-link></span>
+      · {{ drop.createdDate | formatDate }}
+      · <span class="before__mask before__mask-walking-distance">{{ drop.distance | formatDistance }}</span>
   </template>
-</section>
+</b-card>

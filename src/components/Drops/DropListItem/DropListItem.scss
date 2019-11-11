@@ -3,7 +3,7 @@
   border-radius: .7em;
   background-color: $theme-primary;
   margin-bottom: 1em;
-  transition: transform 500ms;
+  transition: all .5s ease-in-out;
 
   &:hover {
       background-color: $theme-layer-lighter;
