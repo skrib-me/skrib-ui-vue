@@ -14,21 +14,24 @@ Vue.use(Auth, config.oidc)
 
 const oktaRoutes = [
   {
-    path: '/implicit/callback',
     name: 'okta',
+    path: '/implicit/callback',
     component: Auth.handleCallback()
   },
   {
+    name: 'home.login',
     path: '/login',
-    name: 'okta-login',
-    component: () => import('@/views/Login')
+    components: {
+      default: Home,
+      modal: () => import('@/components/Modal/Login')
+    }
   },
 ]
 
 const appRoutes = [
   {
-    path: '/',
     name: 'home',
+    path: '/',
     component: Home
   }
 ]

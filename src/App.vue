@@ -2,6 +2,7 @@
   <div id="app">
     <Navigation />
     <main class="container">
+      <router-view name="modal" class="modal fade"/>
       <router-view/>
     </main>
   </div>
