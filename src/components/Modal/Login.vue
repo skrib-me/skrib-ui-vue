@@ -1,15 +1,15 @@
-<template>
-  <section class="modal-login" :class="show? 'show':'fade'">
-    <div class="modal-login__spinner" v-if="!authenticated">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Logging in...</span>
-      </div>
-    </div>
-    <div v-else>
-      Logged in, redirect ...
-    </div>
-  </section>
-</template>
+  <template>
+    <transition name="fade">
+      <section class="modal-login show">
+        <div class="modal-login__status" >
+          <div style="margin: 0 auto 10px auto;" v-if="!authenticated">Logging in...</div>
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Logging in...</span>
+          </div>
+        </div>
+      </section>
+    </transition>
+  </template>
 
 <script>
 // require('bootstrap/dist/js/bootstrap.js')
@@ -70,10 +70,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.95);
   transition: all 2s ease-out;
 }
-.modal-login--hidden {
-  opacity: 0;
-}
-.modal-login__spinner {
+.modal-login__status {
   position: absolute;
   top: 50%;
   left: 0;
@@ -84,5 +81,13 @@ export default {
 .spinner-border, .sr-only {
   color: $theme-secondary;
 }
+
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
 </style>
 
